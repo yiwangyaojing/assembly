@@ -1,17 +1,24 @@
 <template>
-  <div class="product-long-press-center" ref="productLongPressCenter" @touchmove="touchMove($event)" @touchstart="touchStart($event)" @touchend="touchEnd()">
+  <div
+    class="product-long-press-center"
+    ref="productLongPressCenter"
+    @touchmove="touchMove($event)"
+    @touchstart="touchStart($event)"
+    @touchend="touchEnd()"
+  >
     <slot> </slot>
   </div>
 </template>
 <script>
+import bus from "./bus";
 export default {
-  props: ['data', 'index'],
+  props: ["data", "index"],
   data() {
     return {
       timer: null,
       startX: 0, //手指按下时x轴的位置
       startY: 0, //手指按下时y轴的位置
-      isClick: false
+      isClick: false,
     };
   },
   destroyed() {
@@ -34,10 +41,10 @@ export default {
           data: this.data,
           index: this.index,
           x: this.startX,
-          y: this.$refs.productLongPressCenter.getBoundingClientRect().top || 0
+          y: this.$refs.productLongPressCenter.getBoundingClientRect().top || 0,
         };
         this.isClick = false;
-        this.$evtBus.$emit('val', query);
+        bus.$emit("val", query);
       }, 1000);
     },
     touchMove(e) {
@@ -53,19 +60,20 @@ export default {
       }
     },
     touchEnd() {
+      // 通过touchStart判断是否是点击和长按
       if (this.isClick) {
-        this.$evtBus.$emit('checkExistence', () => {
-          this.$emit('click');
+        // 向parent组件发送checkExistence方法,检测长按是否存在
+        bus.$emit("checkExistence", () => {
+          this.$emit("click");
         });
       }
       clearTimeout(this.timer);
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss">
-// .product-long-press-center {
-//   display: flex;
-//   flex: 1;
-// }
+.product-long-press-center {
+  display: flex;
+}
 </style>
