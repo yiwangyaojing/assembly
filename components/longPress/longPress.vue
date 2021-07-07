@@ -12,6 +12,7 @@
 <script>
 import bus from "./bus";
 export default {
+  name:'longPress',
   props: ["data", "index"],
   data() {
     return {

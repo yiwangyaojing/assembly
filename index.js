@@ -2,7 +2,7 @@
 import Components from './components';
 let modules = Object.assign({}, Components);
 
-const install = function(Vue) {
+const install = function (Vue) {
   if (install.installed) return;
   Object.keys(modules).forEach(key => {
     let item = modules[key];
@@ -16,5 +16,4 @@ const install = function(Vue) {
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
-
 export default Object.assign(modules, { install });

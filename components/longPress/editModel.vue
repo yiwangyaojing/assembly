@@ -10,6 +10,7 @@
 </template>
 <script>
 export default {
+  name:'editModel',
   props: ['index'],
   data() {
     return {};

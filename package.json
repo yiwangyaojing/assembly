@@ -1,0 +1,14 @@
+{
+  "name": "custom-private-ui",
+  "version": "1.0.1",
+  "description": "不常用的ui组件效果库,有时是公司奇葩的需求,有时是自己无聊写的.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zhouShunFa",
+  "license": "ISC",
+  "__npminstall_done": "Wed Jul 07 2021 10:58:58 GMT+0800 (GMT+08:00)",
+  "_from": "custom-private-ui@1.0.0",
+  "_resolved": "https://registry.nlark.com/custom-private-ui/download/custom-private-ui-1.0.0.tgz?cache=0&sync_timestamp=1625626631888&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcustom-private-ui%2Fdownload%2Fcustom-private-ui-1.0.0.tgz"
+}

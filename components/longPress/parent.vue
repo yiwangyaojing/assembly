@@ -29,6 +29,7 @@
 import bus from "./bus";
 import editModel from "./editModel";
 export default {
+  name:'parent',
   components: {
     editModel,
   },
